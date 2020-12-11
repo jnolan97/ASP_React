@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ASP_React.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -18,9 +19,12 @@ namespace ASP_React.Controllers
 
         private readonly ILogger<WeatherForecastController> _logger;
 
+        //private readonly ITaskRepository _taskRepository;
+
         public WeatherForecastController(ILogger<WeatherForecastController> logger)
         {
             _logger = logger;
+            //_taskRepository = taskRepository;
         }
 
         [HttpGet]
@@ -35,5 +39,11 @@ namespace ASP_React.Controllers
             })
             .ToArray();
         }
+
+
+        //public IEnumerable<Models.Task> GetTasks()
+        //{
+        //    return _taskRepository.AllTasks;
+        //}
     }
 }
